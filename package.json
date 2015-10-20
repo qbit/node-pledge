@@ -1,0 +1,25 @@
+{
+  "name": "node-pledge",
+  "version": "1.0.0",
+  "description": "OpenBSD's pledge(2) extension for node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js",
+    "install": "node-gyp rebuild"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qbit/node-pledge.git"
+  },
+  "keywords": [
+    "openbsd",
+    "pledge"
+  ],
+  "author": "Aaron Bieber <abieber@openbsd.org>",
+  "license": "ISC",
+  "gypfile": true,
+  "bugs": {
+    "url": "https://github.com/qbit/node-pledge/issues"
+  },
+  "homepage": "https://github.com/qbit/node-pledge#readme"
+}
