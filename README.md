@@ -10,9 +10,15 @@ a privlidge it has pledged to not use, it will be killed by the kernel.
 
 # Example Usage
 
+Install via npm:
+
+```
+npm install --save node-pledge
+```
+
 ```JavaScript
 var http = require('http');
-var pledge = require('pledge');
+var pledge = require('node-pledge');
 
 pledge.init("stdio rpath wpath ioctl");
 
