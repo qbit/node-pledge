@@ -40,4 +40,6 @@ Line from `dmesg(8)`:
 node(9940): syscall 8
 ```
 
-# This is just an expirement!
+# This is an expirement!
+
+Use at your own risk! It will *ONLY* work on OpenBSD!
