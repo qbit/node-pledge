@@ -1,1 +1,1 @@
-module.export = require('./build/Release/pledge');
+module.exports = require('./build/Release/pledge');
