@@ -10,7 +10,7 @@ a privlidge it has pledged to not use, it will be killed by the kernel.
 
 # Example Usage
 
-```
+```JavaScript
 var http = require('http');
 var pledge = require('pledge');
 
