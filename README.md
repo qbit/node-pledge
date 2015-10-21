@@ -5,8 +5,8 @@ Bindings for for OpenBSD's [pledge(2)](http://www.openbsd.org/cgi-bin/man.cgi/Op
 
 # What?
 
-`pledge(2)` allows process to ratchet down the privlidges it requires to run, if it attempts to access
-a privlidge it has pledged to not use, it will be killed by the kernel.
+`pledge(2)` allows a process to ratchet down the privileges it requires to run, if it attempts to access
+a privilege it has pledged to not use, it will be killed by the kernel.
 
 # Example Usage
 
