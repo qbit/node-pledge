@@ -1,6 +1,6 @@
 {
   "name": "node-pledge",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "OpenBSD's pledge(2) extension for node.js",
   "main": "index.js",
   "scripts": {

@@ -3,7 +3,6 @@
 #include <string.h>
 #include <err.h>
 #include <errno.h>
-#include <string>
 
 namespace openbsdPledge {
 
@@ -30,8 +29,7 @@ void Pledge(const FunctionCallbackInfo<Value>& args) {
     return;
   } 
 
-  std::string str(*v8::String::Utf8Value(args[0]));
-  const int num = pledge(str.c_str(), NULL);
+  const int num = pledge(*String::Utf8Value(args[0]), NULL);
   if (num == -1)
     err(1, "pledge");
  

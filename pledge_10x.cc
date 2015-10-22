@@ -2,7 +2,6 @@
 #include <unistd.h>
 #include <err.h>
 #include <errno.h>
-#include <string>
 
 using namespace v8;
 
@@ -19,8 +18,7 @@ Handle<Value> Pledge(const Arguments& args) {
     return scope.Close(Undefined());
   }
  
-  std::string str(*v8::String::Utf8Value(args[0]));
-  const int num = pledge(str.c_str(), NULL);
+  const int num = pledge(*String::Utf8Value(args[0]), NULL);
   if (num == -1)
     err(1, "pledge");
 
