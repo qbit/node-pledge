@@ -1,6 +1,6 @@
 {
   'variables' : {
-    'legacy':'<!(./version.js)',
+    'legacy':'<!(node ./version.js)',
   },
   "targets": [
     {
