@@ -1,8 +1,9 @@
 {
   "name": "node-pledge",
-  "version": "1.0.6",
+  "version": "1.1.0",
   "description": "OpenBSD's pledge(2) extension for node.js",
   "main": "index.js",
+  "engines" : { "node" : ">=4.2.0" },
   "scripts": {
     "test": "node test.js",
     "install": "node-gyp rebuild"
@@ -21,8 +22,5 @@
   "bugs": {
     "url": "https://github.com/qbit/node-pledge/issues"
   },
-  "homepage": "https://github.com/qbit/node-pledge#readme",
-  "dependencies": {
-    "semver": "^5.1.0"
-  }
+  "homepage": "https://github.com/qbit/node-pledge#readme"
 }
