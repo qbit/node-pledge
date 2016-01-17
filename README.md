@@ -37,13 +37,14 @@ Output:
 ```
 node stuff.js
 stuff
-Killed
+Abort trap (core dumped) 
 ```
 
 Line from `dmesg(8)`:
 
 ```
-node(9940): syscall 8
+node(24353): sysctl 6: 4 17 0 0 3 0
+node(24353): syscall 202 ""
 ```
 
 # This is an expirement!
