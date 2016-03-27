@@ -1,0 +1,30 @@
+var https = require('https'),
+    url = require('url'),
+    qs = require('querystring'),
+    pledge = require('node-pledge'),
+    ddg_url = 'https://api.duckduckgo.com/?format=json';
+
+pledge.init('stdio rpath wpath cpath inet dns ioctl');
+
+var i = 2, l = process.argv.length, q = '';
+for (; i < l; i++) {
+    q += process.argv[i];
+    q += ' ';
+}
+
+var req = https.get(ddg_url + '&q=' + q, function(res) {
+    var data = '';
+    res.on('data', function(chunk) {
+	data += chunk;
+    });
+    
+    res.on('end', function() {
+	pledge.init('stdio');
+	d = JSON.parse(data);
+	if (d.Answer !== "" && typeof(d.Answer === "string")) {
+	    console.log(d.Answer);
+	} else {
+	    console.log(d);
+	}
+    });
+});
