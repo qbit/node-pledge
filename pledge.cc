@@ -19,17 +19,20 @@ void Pledge(const FunctionCallbackInfo<Value>& args) {
 
   if (args.Length() < 1) {
     isolate->ThrowException(Exception::TypeError(
-        String::NewFromUtf8(isolate, "Wrong number of arguments")));
+        String::NewFromUtf8(isolate, "Wrong number of arguments",
+            v8::NewStringType::kNormal).ToLocalChecked()));
+
     return;
   }
 
   if (!args[0]->IsString()) {
     isolate->ThrowException(Exception::TypeError(
-        String::NewFromUtf8(isolate, "Wrong arguments")));
+        String::NewFromUtf8(isolate, "Wrong arguments",
+            v8::NewStringType::kNormal).ToLocalChecked()));
     return;
   } 
 
-  const int num = pledge(*String::Utf8Value(args[0]), NULL);
+  const int num = pledge(*String::Utf8Value(isolate, args[0]), NULL);
   if (num == -1)
     err(1, "pledge");
  
