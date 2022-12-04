@@ -20,7 +20,7 @@ npm install --save node-pledge
 var http = require('http');
 var pledge = require('node-pledge');
 
-pledge.init("stdio rpath wpath ioctl");
+pledge.init("stdio rpath wpath prot_exec");
 
 console.log("stuff");
 
