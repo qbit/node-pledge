@@ -33,8 +33,12 @@ void Pledge(const FunctionCallbackInfo<Value>& args) {
   } 
 
   const int num = pledge(*String::Utf8Value(isolate, args[0]), NULL);
-  if (num == -1)
-    err(1, "pledge");
+  if (num == -1) {
+    isolate->ThrowException(Exception::TypeError(
+        String::NewFromUtf8(isolate, "Pledge Error",
+            v8::NewStringType::kNormal).ToLocalChecked()));
+    return;
+  }
  
   args.GetReturnValue().Set(num);
 }
