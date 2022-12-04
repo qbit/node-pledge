@@ -4,7 +4,7 @@ var https = require('https'),
     pledge = require('node-pledge'),
     ddg_url = 'https://api.duckduckgo.com/?format=json';
 
-pledge.init('stdio rpath wpath cpath inet dns ioctl');
+pledge.init('stdio rpath wpath cpath inet dns prot_exec');
 
 var i = 2, l = process.argv.length, q = '';
 for (; i < l; i++) {
