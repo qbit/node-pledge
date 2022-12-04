@@ -5,7 +5,7 @@
 // $ echo '{"a":1,"b":3}' | ./pp.js
 
 var data = '', pledge = require('node-pledge');
-pledge.init('stdio ioctl rpath tty');
+pledge.init('stdio prot_exec rpath tty');
 
 process.stdin.setEncoding('utf8');
 process.stdin.on('readable', function() {
